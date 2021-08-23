@@ -45,7 +45,8 @@
     "unified": "9.x"
   },
   "dependencies": {
-    "node-emoji": "^1.11.0"
+    "node-emoji": "^1.11.0",
+    "unist-util-visit": "^2.0.2"
   },
   "jest": {
     "testEnvironment": "node"
