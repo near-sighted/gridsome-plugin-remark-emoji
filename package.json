@@ -8,9 +8,9 @@
   "exports": "./index.js",
   "scripts": {
     "eslint": "eslint .",
-    "prettier": "prettier -c '**/*.js' '**/*.ts'",
+    "prettier": "prettier -c '**/*.js'",
     "lint": "npm-run-all -p eslint prettier",
-    "format": "prettier -w '**/*.js' '**/*.ts'",
+    "format": "prettier -w '**/*.js'",
     "test": "jest"
   },
   "repository": {

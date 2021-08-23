@@ -2,7 +2,6 @@ var visit = require('unist-util-visit');
 var emoji = require('node-emoji');
 var emoticon = require('./emoticon');
 
-
 const RE_EMOJI = /:\+1:|:-1:|:[\w-]+:/g;
 const RE_SHORT = /[$@|*'",;.=:\-)([\]\\/<>038BOopPsSdDxXzZ]{2,5}/g;
 
