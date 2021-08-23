@@ -1,9 +1,11 @@
-remark-emoji
+gridsome-plugin-remark-emoji
 ============
 [![CI][ci-badge]][ci]
 [![npm][npm-badge]][npm]
 
-This is a [remark](https://github.com/remarkjs/remark) plugin to replace `:emoji:` to real UTF-8 emojis in text.
+This is a [remark](https://github.com/remarkjs/remark) plugin to replace `:emoji:` to real UTF-8 emojis in text. 
+
+It's a modification of `remark-emoji` that strips out all ESM-only dependencies, and allows it to be used with Gridsome as a plugin of `gridsome-plugin-remark-container`.
 
 ## Demo
 
@@ -11,19 +13,17 @@ You can find a demo in the following [Codesandbox](https://codesandbox.io/s/rema
 
 ## Usage
 
-```
-remark().use(emoji [, options]);
-```
+In your `gridome.config.js`:
 
 ```javascript
-import {remark} from 'remark';
-import emoji from 'remark-emoji';
-
-const doc = 'Emojis in this text will be replaced: :dog: :+1:';
-remark().use(emoji).process(doc).then(file => {
-    console.log(String(file));
-    // => Emojis in this text will be replaced: 🐶 👍
-});
+ transformers: {
+    remark: {
+      externalLinksTarget: "_blank",
+      externalLinksRel: ["nofollow", "noopener", "noreferrer"],
+      anchorClassName: "icon icon-link",
+      plugins:  ["gridsome-plugin-remark-container",
+                'gridsome-plugin-remark-emoji']
+    }
 ```
 
 Note that this package is [ESM only][esm-only] from v3.0.0 since remark packages migrated to ESM.

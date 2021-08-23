@@ -8,7 +8,7 @@ jobs:
     strategy:
       matrix:
         # Default version of setup-node is old (v10)
-        node: ['12', '14', '16']
+        node: ['12', '14']
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2

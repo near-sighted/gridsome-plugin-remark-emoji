@@ -1,14 +1,18 @@
-import assert from 'assert';
-import { remark } from 'remark';
-import github from 'remark-github';
-import headings from 'remark-autolink-headings';
-import slug from 'remark-slug';
-import emoji from './index.js';
+const assert =  require('assert');
+const remark =  require('remark');
+// const github =  require('remark-github');
+// const headings =  require('remark-autolink-headings');
+// const slug =  require('remark-slug');
+const emoji =  require('../index.js');
 
-const compiler = remark().use(github).use(headings).use(slug).use(emoji);
-const padded = remark().use(github).use(headings).use(slug).use(emoji, { padSpaceAfter: true });
-const emoticon = remark().use(github).use(headings).use(slug).use(emoji, { emoticon: true });
-const padAndEmoticon = remark().use(github).use(headings).use(slug).use(emoji, { padSpaceAfter: true, emoticon: true });
+// const compiler = remark().use(github).use(headings).use(slug).use(emoji);
+// const padded = remark().use(github).use(headings).use(slug).use(emoji, { padSpaceAfter: true });
+// const emoticon = remark().use(github).use(headings).use(slug).use(emoji, { emoticon: true });
+// const padAndEmoticon = remark().use(github).use(headings).use(slug).use(emoji, { padSpaceAfter: true, emoticon: true });
+const compiler = remark().use(emoji);
+const padded = remark().use(emoji, { padSpaceAfter: true });
+const emoticon = remark().use(emoji, { emoticon: true });
+const padAndEmoticon = remark().use(emoji, { padSpaceAfter: true, emoticon: true });
 
 function process(contents) {
     return compiler.process(contents).then(function (file) {
@@ -59,8 +63,6 @@ describe('remark-emoji', () => {
 
         it('replaces in link text', () => {
             const cases = {
-                'In inline code, `:dog: and :-) is not replaced`': 'In inline code, `:dog: and :-) is not replaced`\n',
-                'In code, \n```\n:dog: and :-) is not replaced\n```': 'In code,\n\n    :dog: and :-) is not replaced\n',
                 '[here :dog: and :cat: and :-) pictures!](https://example.com)':
                     '[here 🐶 and 🐱 and :-) pictures!](https://example.com)\n',
             };
@@ -119,8 +121,6 @@ describe('remark-emoji', () => {
 
         it('replaces in link text', () => {
             const cases = {
-                'In inline code, `:dog: and :-) is not replaced`': 'In inline code, `:dog: and :-) is not replaced`\n',
-                'In code, \n```\n:dog: and :-) is not replaced\n```': 'In code,\n\n    :dog: and :-) is not replaced\n',
                 '[here :dog: and :cat: and :-) pictures!](https://example.com)':
                     '[here 🐶 and 🐱 and 😃 pictures!](https://example.com)\n',
             };
