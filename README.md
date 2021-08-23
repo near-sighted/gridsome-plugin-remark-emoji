@@ -26,8 +26,6 @@ In your `gridome.config.js`:
     }
 ```
 
-Note that this package is [ESM only][esm-only] from v3.0.0 since remark packages migrated to ESM.
-
 ## Options
 
 ### `options.padSpaceAfter`
@@ -50,5 +48,4 @@ Distributed under [the MIT License](LICENSE).
 [ci-badge]: https://github.com/rhysd/remark-emoji/workflows/CI/badge.svg?branch=master&event=push
 [ci]: https://github.com/rhysd/remark-emoji/actions?query=workflow%3ACI
 [npm-badge]: https://badge.fury.io/js/remark-emoji.svg
-[npm]: https://www.npmjs.com/package/remark-emoji
-[esm-only]: https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c
+[npm]: https://www.npmjs.com/package/gridsome-plugin-remark-emoji
