@@ -25,7 +25,8 @@
     "gridsome-plugin"
   ],
   "files": [
-    "index.js"
+    "index.js",
+    "emoticon.js"
   ],
   "author": "humanman <humanmanben@gmail.com>",
   "license": "MIT",
