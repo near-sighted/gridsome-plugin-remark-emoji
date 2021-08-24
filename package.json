@@ -24,9 +24,7 @@
     "plugin",
     "gridsome-plugin"
   ],
-  "types": "types/index.d.ts",
   "files": [
-    "types/index.d.ts",
     "index.js"
   ],
   "author": "humanman <humanmanben@gmail.com>",
